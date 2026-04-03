@@ -1,5 +1,116 @@
-# Vue 3 + TypeScript + Vite
+# 💰 Budget Tracker (Vue 3 + TypeScript)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A clean, modern, and scalable **budget management application** built using **Vue 3 Composition API**, **Pinia**, and **Tailwind CSS**.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+---
+
+## 🚀 Features
+
+* 🔐 Mock Authentication (session-based)
+* 📊 Dashboard with:
+
+  * Total Balance
+  * Income & Expense Summary
+  * Recent Transactions
+* 💸 Transactions:
+
+  * Add Income / Expense
+  * Delete Transactions
+  * Filter (All / Income / Expense)
+* 📱 Fully Responsive UI
+* 🍔 Toggleable Sidebar (Hamburger Menu)
+* ⚡ Real-time updates using Pinia
+* 💾 Session persistence (sessionStorage)
+
+---
+
+## 🧠 Tech Stack
+
+* Vue 3 (Composition API)
+* TypeScript
+* Pinia (State Management)
+* Tailwind CSS (UI)
+* Vue Router
+
+---
+
+## 🏗️ Architecture
+
+Feature-based scalable structure:
+
+```
+src/
+├── app/
+│   └── store/
+├── features/
+│   ├── auth/
+│   ├── dashboard/
+│   ├── transactions/
+│   ├── analytics/
+├── shared/
+│   ├── layout/
+│   ├── components/
+├── router/
+├── services/
+```
+
+---
+
+## 🔐 Authentication
+
+* Mock JWT-like token
+* Stored in `sessionStorage`
+* Route protection using Vue Router guards
+
+---
+
+## 📊 State Management
+
+Centralized using Pinia:
+
+* Transactions Store
+* Auth Store
+* Derived values (income, expense, balance)
+
+---
+
+## 🎨 UI/UX Highlights
+
+* Clean, minimal SaaS-style UI
+* Consistent spacing & typography
+* Soft shadows and rounded cards
+* Accessible color contrast
+* Mobile-first responsive layout
+
+---
+
+## 🖥️ Screenshots
+
+> Add screenshots here 👇
+
+---
+
+## ⚡ Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 📌 Future Improvements
+
+* Charts (D3 / Recharts equivalent)
+* Edit transactions
+* Category support
+* Backend integration (Node / .NET)
+
+---
+
+## 👨‍💻 Author
+
+Santhosh
+Frontend Developer (React | Angular | Vue)
+
+---
