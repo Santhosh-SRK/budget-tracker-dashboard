@@ -9,19 +9,28 @@ export type Transaction = {
 
 export const useTransactionsStore = defineStore("transactions", {
   state: () => ({
-    transactions: JSON.parse(sessionStorage.getItem("tx") || "[]") as Transaction[],
+    transactions:
+      JSON.parse(sessionStorage.getItem("tx") || "null") ||
+      ([
+        { id: 1, title: "Salary", amount: 50000, type: "income" },
+        { id: 2, title: "Groceries", amount: 2500, type: "expense" },
+        { id: 3, title: "Swiggy Order", amount: 600, type: "expense" },
+        { id: 4, title: "Freelance", amount: 12000, type: "income" },
+        { id: 5, title: "Electricity Bill", amount: 1800, type: "expense" },
+        { id: 6, title: "Movie Night", amount: 900, type: "expense" },
+      ] as Transaction[]),
   }),
 
   getters: {
-    income: (state) =>
+    income: (state): number =>
       state.transactions
-        .filter((t) => t.type === "income")
-        .reduce((sum, t) => sum + t.amount, 0),
+        .filter((t: Transaction) => t.type === "income")
+        .reduce((sum: number, t: Transaction) => sum + t.amount, 0),
 
-    expense: (state) =>
+    expense: (state): number =>
       state.transactions
-        .filter((t) => t.type === "expense")
-        .reduce((sum, t) => sum + t.amount, 0),
+        .filter((t: Transaction) => t.type === "expense")
+        .reduce((sum: number, t: Transaction) => sum + t.amount, 0),
 
     balance(): number {
       return this.income - this.expense;
@@ -36,8 +45,9 @@ export const useTransactionsStore = defineStore("transactions", {
     },
 
     deleteTransaction(id: number) {
-      this.transactions = this.transactions.filter((t) => t.id !== id);
-      this.persist();
+      this.transactions = this.transactions.filter(
+        (t: Transaction) => t.id !== id,
+      );
     },
 
     persist() {

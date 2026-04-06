@@ -22,7 +22,7 @@
     <div
       :class="[
         'flex flex-col h-full transition-all duration-300',
-        isOpen ? 'ml-64' : 'ml-0'
+        isOpen ? 'md:ml-64 ml-0' : 'ml-0'
       ]"
     >
       <Topbar @toggle="toggleSidebar" />
