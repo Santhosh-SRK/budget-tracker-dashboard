@@ -4,7 +4,7 @@
     <!-- Sidebar -->
     <aside
       :class="[
-        'fixed top-0 left-0 h-full w-64 bg-white border-r z-50 transition-transform duration-300',
+        'fixed top-0 left-0 h-full w-64 bg-white border-r z-40 transition-transform duration-300',
         isOpen ? 'translate-x-0' : '-translate-x-full'
       ]"
     >
@@ -40,7 +40,7 @@ import { ref } from "vue";
 import Sidebar from "./Sidebar.vue";
 import Topbar from "./Topbar.vue";
 
-const isOpen = ref(true);
+const isOpen = ref(window.innerWidth >= 768);
 
 const toggleSidebar = () => {
   isOpen.value = !isOpen.value;

@@ -1,11 +1,14 @@
 <template>
-  <div class="bg-white border-b px-6 py-4 flex justify-between items-center">
-
+<div class="bg-white border-b px-4 md:px-6 py-4 flex justify-between items-center relative z-50">
     <div class="flex items-center gap-3">
-      <button @click="$emit('toggle')" class="text-xl cursor-pointer">
+      <button
+        @click="$emit('toggle')"
+        class="text-xl cursor-pointer"
+      >
         ☰
       </button>
-      <h2 class="font-semibold text-lg">Dashboard</h2>
+
+      <!-- <h2 class="font-semibold text-lg">Dashboard</h2> -->
     </div>
 
     <button
